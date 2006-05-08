@@ -1,13 +1,15 @@
 # TODO:
 # - fixme
-# - -devel subpackage
+# - missing url (propably don't exist)
+# - extendet summary and desc
+# - pl
 Summary:	nxc
 Name:		nxc
 Version:	0.1.1
 Release:	1
 License:	GPL
 Group:		Applications/Networking
-Source0:	http://vm.gwright.org.uk/nxc-0.1.1.tar.bz2
+Source0:	http://vm.gwright.org.uk/%{name}-%{version}.tar.bz2
 # Source0-md5:	1688999d3d3a4fc01593214c0bcc9ea0
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -16,6 +18,19 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 nxc
+
+%package devel
+Summary:	Header files for nxc
+Summary(pl):	Pliki nag³ówkowe nxc
+Group:		Development/Libraries
+Requires:	%{name} = %{version}-%{release}
+Requires:	libstdc++-devel
+
+%description devel
+Header files for nxc.
+
+%description devel -l pl
+Pliki nag³ówkowe nxc.
 
 %prep
 %setup -q
@@ -26,7 +41,8 @@ cp -f /usr/share/automake/config.sub admin
 
 %configure \
 	--enable-new-ldflags \
-	--enable-final
+	--enable-final \
+	--disable-debug \
 %if "%{_lib}" == "lib64"
 	--enable-libsuffix=64 \
 %endif
@@ -44,5 +60,14 @@ rm -rf $RPM_BUILD_ROOT
 %post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
 
-%files -f %{name}.lang
+%files
 %defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_libdir}/*.so.*.*.*
+%{_prefix}/NX/share/client.id_dsa.key
+#where put that ? ^^^^^^^^^^^^^^^^^^^
+
+%files devel
+%defattr(644,root,root,755)
+%{_libdir}/*.la
+%{_includedir}/nxc/*.h
