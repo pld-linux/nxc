@@ -1,9 +1,10 @@
 # TODO:
 # - fixme
-# - missing url (propably don't exist)
-# - extendet summary and desc
+# - missing url (propably doesn't exist)
+# - extend summary and desc
 # - pl
-Summary:	nxc
+Summary:	NX protocol libraries
+Summary(pl):	Biblioteki protoko³u NX
 Name:		nxc
 Version:	0.1.1
 Release:	1
@@ -13,11 +14,15 @@ Source0:	http://vm.gwright.org.uk/%{name}-%{version}.tar.bz2
 # Source0-md5:	1688999d3d3a4fc01593214c0bcc9ea0
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	libstdc++-devel
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-nxc
+NX protocol libraries.
+
+%description -l pl
+Biblioteki protoko³u NX.
 
 %package devel
 Summary:	Header files for nxc
@@ -69,6 +74,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/*.so
 %{_libdir}/*.la
 %dir %{_includedir}/nxc
 %{_includedir}/nxc/*.h
