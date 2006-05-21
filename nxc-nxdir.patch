@@ -1,0 +1,12 @@
+diff -ur nxc-0.1.1.org/nxdriver/Options.cpp nxc-0.1.1/nxdriver/Options.cpp
+--- nxc-0.1.1.org/nxdriver/Options.cpp	2006-05-04 15:44:08.000000000 +0200
++++ nxc-0.1.1/nxdriver/Options.cpp	2006-05-21 15:41:46.252640250 +0200
+@@ -83,7 +83,7 @@
+ #ifdef WIN32
+        sys_dir = "c:\\Program Files\\NX Client for Windows";
+ #else
+-      sys_dir = "/usr/NX";
++      sys_dir = "/usr";
+ #endif
+     }
+   }
