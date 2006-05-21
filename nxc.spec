@@ -7,7 +7,7 @@ Summary:	NX protocol libraries
 Summary(pl):	Biblioteki protoko³u NX
 Name:		nxc
 Version:	0.1.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Networking
 Source0:	http://vm.gwright.org.uk/%{name}-%{version}.tar.bz2
@@ -69,8 +69,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/*.so.*.*.*
-%{_prefix}/NX/share/client.id_dsa.key
-#where put that ? ^^^^^^^^^^^^^^^^^^^
+# where put that ?
+# %{_prefix}/NX/share/client.id_dsa.key
 
 %files devel
 %defattr(644,root,root,755)
