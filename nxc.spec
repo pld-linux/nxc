@@ -7,11 +7,12 @@ Summary:	NX protocol libraries
 Summary(pl):	Biblioteki protoko³u NX
 Name:		nxc
 Version:	0.1.1
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications/Networking
 Source0:	http://vm.gwright.org.uk/%{name}-%{version}.tar.bz2
 # Source0-md5:	1688999d3d3a4fc01593214c0bcc9ea0
+Patch0:		%{name}-nxdir.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libstdc++-devel
@@ -39,6 +40,7 @@ Pliki nag³ówkowe nxc.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 cp -f /usr/share/automake/config.sub admin
