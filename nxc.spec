@@ -4,7 +4,7 @@
 # - extend summary and desc
 # - pl
 Summary:	NX protocol libraries
-Summary(pl):	Biblioteki protoko≥u NX
+Summary(pl.UTF-8):   Biblioteki protoko≈Çu NX
 Name:		nxc
 Version:	0.1.1
 Release:	3
@@ -22,12 +22,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 NX protocol libraries.
 
-%description -l pl
-Biblioteki protoko≥u NX.
+%description -l pl.UTF-8
+Biblioteki protoko≈Çu NX.
 
 %package devel
 Summary:	Header files for nxc
-Summary(pl):	Pliki nag≥Ûwkowe nxc
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe nxc
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libstdc++-devel
@@ -35,8 +35,8 @@ Requires:	libstdc++-devel
 %description devel
 Header files for nxc.
 
-%description devel -l pl
-Pliki nag≥Ûwkowe nxc.
+%description devel -l pl.UTF-8
+Pliki nag≈Ç√≥wkowe nxc.
 
 %prep
 %setup -q
