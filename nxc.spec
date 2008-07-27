@@ -7,7 +7,7 @@ Summary:	NX protocol libraries
 Summary(pl.UTF-8):	Biblioteki protokołu NX
 Name:		nxc
 Version:	0.1.1
-Release:	3
+Release:	4
 License:	GPL
 Group:		Applications/Networking
 Source0:	http://vm.gwright.org.uk/%{name}-%{version}.tar.bz2
